@@ -13,7 +13,7 @@ void showMenu() {
 
 
 int main() {
-	
+
 	//show menu, show balance, deposit, withdraw
 	int userSelection;
 	double balance = 500;
@@ -27,16 +27,16 @@ int main() {
 
 		//handling user selection with switch case
 		switch (userSelection) {
-		case 1: 
+		case 1:
 			cout << "Your Balance is: " << balance << endl;
 			break;
-		case 2: 
+		case 2:
 			cout << "Desposit Amount: ";
 			double depositAmount;
 			cin >> depositAmount;
 			balance += depositAmount;
 			break;
-		case 3: 
+		case 3:
 			cout << "Withdraw Amount: ";
 			double withdrawAmount;
 			cin >> withdrawAmount;
@@ -45,17 +45,19 @@ int main() {
 			else
 				cout << "Insufficient balance to action request!" << endl;
 			break;
-		case 4: 
+		case 4:
 			cout << "Exiting ATM application!" << endl;
 			exit(1);
 			break;
-		default: 
+		default:
 			cout << "Invalid input!" << endl;
+			break;
 
 		}
 	}
 
 	//application fails if char / string input detected...
+	//infinite loop :/
 
 	return 0;
 }
