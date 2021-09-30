@@ -18,8 +18,8 @@ int main() {
 	int userSelection;
 	double balance = 500;
 
-	//creating do-while loop for application
-	do {
+	//creating while loop for application
+	while (1) {
 		showMenu();
 		cout << "Select an option: " << endl;
 		cin >> userSelection;
@@ -27,14 +27,17 @@ int main() {
 
 		//handling user selection with switch case
 		switch (userSelection) {
-		case 1: cout << "Your Balance is: " << balance << endl;
+		case 1: 
+			cout << "Your Balance is: " << balance << endl;
 			break;
-		case 2: cout << "Desposit Amount: ";
+		case 2: 
+			cout << "Desposit Amount: ";
 			double depositAmount;
 			cin >> depositAmount;
 			balance += depositAmount;
 			break;
-		case 3: cout << "Withdraw Amount: ";
+		case 3: 
+			cout << "Withdraw Amount: ";
 			double withdrawAmount;
 			cin >> withdrawAmount;
 			if (withdrawAmount <= balance)
@@ -42,12 +45,17 @@ int main() {
 			else
 				cout << "Insufficient balance to action request!" << endl;
 			break;
-
+		case 4: 
+			cout << "Exiting ATM application!" << endl;
+			exit(1);
+			break;
+		default: 
+			cout << "Invalid input!" << endl;
 
 		}
-	} while (userSelection != 4);
+	}
 
-
+	//application fails if char / string input detected...
 
 	return 0;
 }
